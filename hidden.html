@@ -10,7 +10,7 @@
 
 <form>
     <label for="form1_password">Enter the secret word </label>
-    <input type ="password" id="form1_password" name="form1_password"value=secret > <br>
+    <input type ="password" id="form1_password" name="form1_password"value="Secret" > <br>
 
     <label for="form1_guess">Enter a guess</label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
@@ -26,38 +26,68 @@
 <script>
 var correct = 0;
 var wrong = 0;
-var correctcount=1;
-var wrongcount=1;
+
 
 
 
 function processGuess(){
     
     console.log("Getting form values")
+    
+    out = document.getElementById("result")
     password = document.getElementById("form1_password").value
     guess = document.getElementById("form1_guess").value
     if(password==guess)
     {
-        correct=1;
+        correct=correct+1;
         alert("congratulations");
+        out.innerHTML = "Correct "+ correct+" Wrong "+ wrong
     }
     else{
-        wrong=1;
+        wrong=wrong+1;;
         alert("Sorry");
+        out.innerHTML = "Correct "+ correct+" Wrong "+ wrong
     }
     
     
-    out = document.getElementById("result")
-    if(correct){
-        out.innerHTML = correctcount++;
-    } else {
-        out.innerHTML = wrongcount++;
-    }
+   
 }
 </script>
 <div class="container">
-    <img src="\images\hibiscus.jpg" height="200" width="200" onclick="rotateimage()">
+    <img src="images/hibiscus.jpg" id="image" height="200" width="200" onclick="rotateimage()">
 </div>
+<script>
+   var currentimage=0;
+   image = document.getElementById("image");
+   function rotateimage(){
+     switch(currentimage){
+       case 0:
+           image.setAttribute('src','images/phlox.jpg');
+           currentimage = currentimage + 1;
+             break;
+        case 1:
+        image.setAttribute('src','images/tulips.jpg');
+           currentimage = currentimage + 1;
+             break;
+        case 2:
+        image.setAttribute('src','images/tulips.jpg');
+           currentimage = currentimage + 1;
+             break;
+     }
+      
+    }  
+
+
+
+             
+            
+
+
+
+
+          
+
+</script>
 
 </body>
 </html> 
