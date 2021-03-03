@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bears</title>
+</head>
+
+<body>
+    <h1>Shivaram builds a bear</h1>
+    <h2>Getting input</h2>
+    <form>
+        <input type="checkbox" id="cb1_hat" name="hat" value="hat">
+        <label for="cb1_hat">hat</label></br>
+
+        <input type="checkbox" id="cb1_scarf" name="scarf" value="scarf">
+        <label for="cb1_scarf">scarf</label></br>
+
+        <input type="checkbox" id="cb1_shirt" name="shirt" value="shirt">
+        <label for="cb1_shirt">shirt</label></br>
+
+        <input type="button" onclick="startbear()" value="Start a bear">
+    </form>
+    <p id="result">This text will be replaced </p>
+    <form>
+        <label for="form1_prop">Enter a property </label>
+        <input type="text" id="form1_prop" name="form1_prop" value=color> <br>
+
+        <label for="form1_propValue">Enter a value </label>
+        <input type="text" id="form1_propValue" name="form1_propValue"> <br>
+
+        <input type="button" onclick="updatebear()" value="Update the bear">
+    </form>
+    <p id="res">This text will be replaced </p>
+    <script>
+        var my_bear = {
+            hat: 'false',
+            scarf: 'false',
+            shirt: 'false',
+            "new": 'text'
+        }
+        out = document.getElementById("result")
+
+        function startbear() {
+            if (document.getElementById("cb1_hat").checked) {
+                my_bear.hat = 'true';
+            } else {
+                my_bear.hat = 'false';
+            }
+            result.innerHTML = "hat: " + my_bear.hat;
+            if (document.getElementById("cb1_scarf").checked) {
+                my_bear.scarf = 'true';
+            } else {
+                my_bear.scarf = 'false';
+            }
+            result.innerHTML = result.innerHTML + "\n" + "scarf: " + my_bear.scarf;
+            if (document.getElementById("cb1_shirt").checked) {
+                my_bear.shirt = 'true';
+            } else {
+                my_bear.shirt = 'false';
+            }
+            result.innerHTML = result.innerHTML + "\n" + "shirt: " + my_bear.shirt;
+        }
+        out = document.getElementById("result")
+
+        function updatebear() {
+            var p = document.getElementById("form1_prop").value;
+            var v = document.getElementById("form1_propValue").value;
+            my_bear[p] = v;
+            res.innerHTML = "my_bear[]=  " + JSON.stringify(my_bear);
+        }
+    </script>
+
+</body>
+
+</html>
