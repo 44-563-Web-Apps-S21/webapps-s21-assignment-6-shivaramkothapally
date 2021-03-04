@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <title>Things</title>
- <head>
-    <h1>Hidden things by Shivaram Kothapally</h1></head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+              
+    </head>
 <body>
-
+    <h1>Hidden things by Shivaram Kothapally</h1>
 <h2>Getting input</h2>
   
 
@@ -15,7 +22,7 @@
     <label for="form1_guess">Enter a guess</label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
     
-    <input type="button" onclick="processGuess()" value="Check the Guess">
+    <input type="button" class="btn btn-success" onclick="processGuess()" value="Check the Guess">
 </form>
 
 
@@ -88,6 +95,7 @@ function processGuess(){
           
 
 </script>
+
 
 </body>
 </html> 
